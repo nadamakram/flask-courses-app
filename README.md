@@ -1,6 +1,6 @@
 # flask-courses-app
 
-simple flask application which can add, edit, list (sorted by date) courses to a MYSQL database.
+simple flask application which can add, edit, list (sorted by date) courses to an MYSQL database.
 
 ### Deploy
 ### Using docker-compose 
