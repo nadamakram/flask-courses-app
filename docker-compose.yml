@@ -1,0 +1,30 @@
+version: "3.3"
+
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    networks:
+      - flasknet
+    ports:
+      - "3306:3306"
+
+  flask_app:
+    image: nadamakram/flask-app:docker
+    networks:
+      - flasknet
+    ports:
+      - "5000:5000"
+
+volumes:
+  db_data: {}
+
+networks:
+  flasknet:
